@@ -1,6 +1,7 @@
 name: Run Bot
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "*/10 * * * *"
 
@@ -9,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install library
+      - name: Install Python
         run: pip install python-telegram-bot
       - name: Run bot
         run: python bot.py
