@@ -1,0 +1,15 @@
+name: Run Bot
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install library
+        run: pip install python-telegram-bot
+      - name: Run bot
+        run: python bot.py
