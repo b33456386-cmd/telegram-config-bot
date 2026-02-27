@@ -5,6 +5,8 @@ CHANNEL_ID = "@beniiiba"
 
 bot = Bot(token=TOKEN)
 
-config = "v2ray://test-config"
-
-bot.send_message(chat_id=CHANNEL_ID, text=config)
+try:
+    bot.send_message(chat_id=CHANNEL_ID, text="تست 🚀")
+    print("ارسال شد")
+except Exception as e:
+    print("خطا:", e)
